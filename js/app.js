@@ -3,6 +3,7 @@
  */
 // let cards = document.querySelectorAll('.card');
 let cards = document.querySelector('.deck').childNodes;
+let allCards = document.getElementsByClassName('card');
 let cardNames = [
     "diamond",
     "paper-plane-o",
@@ -66,24 +67,16 @@ newGame();
 function showCards() {
     for (i = 0; i < cardNames.length; i++) {
         cards[i].addEventListener('click', function(evt) {
-            if (cardsClickedOn.length > 2) {
-
+          cardsClickedOn.push(evt.target);
+            if (cardsClickedOn.length <= 2) {
+              evt.target.classList.add("show", "open");
+              console.log('if else fired');
             } else {
-                // card.classList.remove('show', 'open');
-                cardsClickedOn.push(evt.srcElement.outerHTML);
-                evt.srcElement.classList.add('show', 'open');
-                document.querySelector('.moves').textContent++;
-           setTimeout(function() {
-             cardsClickedOn.forEach(function(card){
-               card.classList.remove('show', 'open');
-               console.log('setTimeout fx worked');
-             });}, 1500);
+
             } //closes if else
-            // limitCardsBy2();
-            console.log('showcards fx fires');
         }); //closes event listenr
     } //closes for loop
-} //closes showCards
+} //closes showCards fx
 
 showCards();
 
