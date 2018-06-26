@@ -24,8 +24,8 @@ let cardNames = [
 let deck = document.querySelector('.deck');
 let cardsClickedOn = [];
 let match = [];
-// let moves = document.querySelector('.moves').textContent;
 let deckHTML = " ";
+// let moves = document.querySelector('.moves').textContent;
 /*
  * Display the cards on the page*/
 /*   - shuffle the list of cards using the provided "shuffle" method below
@@ -63,19 +63,7 @@ function newGame() {
 
 newGame();
 
-// function showCards() {
-// cards.forEach(function(card) {
-//  card.addEventListener('click', function(evt){
-//     card.classList.add('show', 'open');
-//     cardsClickedOn.push(card);
-//     limitCardsBy2();
-//     console.log('showcards fx fires');
-//  }); //closes eventlistener
-// }); //closes forEach
-// } //closes showCards fx
-
 function showCards() {
-    let allCards = document.querySelectorAll('.card');
     for (i = 0; i < cardNames.length; i++) {
         cards[i].addEventListener('click', function(evt) {
             if (cardsClickedOn.length > 2) {
