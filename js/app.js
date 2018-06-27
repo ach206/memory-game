@@ -77,11 +77,16 @@ function showCards() {
               cardsClickedOn["1"].classList.add("match");
               console.log('we found a match');
             } else {
+              setTimeout(function() {
+                cardsClickedOn[0].classList.remove('show', 'open');
+                cardsClickedOn[1].classList.remove('show', 'open');
+              }), 5000;}
+              console.log('sorry no matches');
+          }; //closes seeIfCardsMatch fx
 
-            }
-          };
-
-            if (cardsClickedOn.length <= 2) {
+            if (cardsClickedOn.length < 3) {
+              evt.target.classList.add("show", "open");
+            } else if (cardsClickedOn.length = 2) {
               evt.target.classList.add("show", "open");
               seeIfCardsMatch();
             } else {
@@ -93,30 +98,7 @@ function showCards() {
 
 showCards();
 
-function limitCardsBy2() {
-    cards.forEach(function(card) {}); //closes forEach
-} //closes limitCardsBy2()
-
-// function seeIfCardsMatch() {
-//     if (cardsClickedOn[0] == cardsClickedOn[1]) {
-//         match.push(cardsClickedOn[0], cardsClickedOn[1]);
-//         cardsClickedOn.classList.add('match');
-//         // matchedCards();
-//         console.log('a match found and it fires');
-//     } else {
-//         // cardsClickedOn = [];
-//         //empty out the cardsClickOn
-//         console.log('no matches found but it fires');
-//     }
-// } //closes seeifcardsmatch
-
-function matchedCards() {
-    // cards.classList.add('show', 'open', 'match');
-    //close eventlistener
-    console.log('matchedcards fx fires');
-} //closes matchedcards
-/*
- * set up the event listener for a card. If a card is clicked:*/
+ /* set up the event listener for a card. If a card is clicked:*/
 /*  - display the card's symbol (put this functionality in another function that you call from this one)*/
 /*  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
