@@ -68,9 +68,13 @@ function showCards() {
     for (i = 0; i < cardNames.length; i++) {
         cards[i].addEventListener('click', function(evt) {
           cardsClickedOn.push(evt.target);
+          function seeIfCardsMatch(cardsClickedOn) {
+            console.log('fx seeIfCardsMatch fires');
+          };
+
             if (cardsClickedOn.length <= 2) {
               evt.target.classList.add("show", "open");
-              console.log('if else fired');
+              seeIfCardsMatch();
             } else {
 
             } //closes if else
@@ -84,18 +88,18 @@ function limitCardsBy2() {
     cards.forEach(function(card) {}); //closes forEach
 } //closes limitCardsBy2()
 
-function seeIfCardsMatch() {
-    if (cardsClickedOn[0] == cardsClickedOn[1]) {
-        match.push(cardsClickedOn[0], cardsClickedOn[1]);
-        cardsClickedOn.classList.add('match');
-        // matchedCards();
-        console.log('a match found and it fires');
-    } else {
-        // cardsClickedOn = [];
-        //empty out the cardsClickOn
-        console.log('no matches found but it fires');
-    }
-} //closes seeifcardsmatch
+// function seeIfCardsMatch() {
+//     if (cardsClickedOn[0] == cardsClickedOn[1]) {
+//         match.push(cardsClickedOn[0], cardsClickedOn[1]);
+//         cardsClickedOn.classList.add('match');
+//         // matchedCards();
+//         console.log('a match found and it fires');
+//     } else {
+//         // cardsClickedOn = [];
+//         //empty out the cardsClickOn
+//         console.log('no matches found but it fires');
+//     }
+// } //closes seeifcardsmatch
 
 function matchedCards() {
     // cards.classList.add('show', 'open', 'match');
