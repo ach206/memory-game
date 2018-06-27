@@ -73,6 +73,8 @@ function showCards() {
             let cardTwo = cardsClickedOn["1"].innerHTML;
             if (cardOne === cardTwo) {
               match.push(cardsClickedOn["0"], cardsClickedOn["1"]);
+              cardsClickedOn["0"].classList.add("match");
+              cardsClickedOn["1"].classList.add("match");
               console.log('we found a match');
             } else {
 
