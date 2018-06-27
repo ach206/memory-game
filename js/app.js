@@ -80,7 +80,8 @@ function showCards() {
               setTimeout(function() {
                 cardsClickedOn[0].classList.remove('show', 'open');
                 cardsClickedOn[1].classList.remove('show', 'open');
-              }, 2000)
+                cardsClickedOn = [];
+              }, 2000);
             }
               console.log('sorry no matches');
           }; //closes seeIfCardsMatch fx
