@@ -68,8 +68,15 @@ function showCards() {
     for (i = 0; i < cardNames.length; i++) {
         cards[i].addEventListener('click', function(evt) {
           cardsClickedOn.push(evt.target);
-          function seeIfCardsMatch(cardsClickedOn) {
-            console.log('fx seeIfCardsMatch fires');
+          function seeIfCardsMatch(evt) {
+            let cardOne = cardsClickedOn["0"].innerHTML;
+            let cardTwo = cardsClickedOn["1"].innerHTML;
+            if (cardOne === cardTwo) {
+              match.push(cardsClickedOn["0"], cardsClickedOn["1"]);
+              console.log('we found a match');
+            } else {
+
+            }
           };
 
             if (cardsClickedOn.length <= 2) {
