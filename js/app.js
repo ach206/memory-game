@@ -76,13 +76,15 @@ function showCards() {
               cardsClickedOn["0"].classList.add("match");
               cardsClickedOn["1"].classList.add("match");
               cardsClickedOn = [];
+              document.querySelector('.moves').textContent++;
               console.log('we found a match');
             } else {
               setTimeout(function() {
                 cardsClickedOn[0].classList.remove('show', 'open');
                 cardsClickedOn[1].classList.remove('show', 'open');
                 cardsClickedOn = [];
-              }, 2000);
+              }, 1000);
+              document.querySelector('.moves').textContent++;
             }
               console.log('sorry no matches');
           }; //closes seeIfCardsMatch fx
@@ -99,6 +101,14 @@ function showCards() {
 
 showCards();
 
+function winner() {
+if (match.length === 16) {
+  console.log('you won');
+} else {
+
+}//if else
+} //winner fx
+winner();
  /* set up the event listener for a card. If a card is clicked:*/
 /*  - display the card's symbol (put this functionality in another function that you call from this one)*/
 /*  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
