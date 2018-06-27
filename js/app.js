@@ -65,7 +65,7 @@ function newGame() {
 newGame();
 
 function showCards() {
-    for (i = 0; i < cardNames.length; i++) {
+    for (i = 0; i < cardNames.length + 1; i++) {
         cards[i].addEventListener('click', function(evt) {
           cardsClickedOn.push(evt.target);
           function seeIfCardsMatch(evt) {
@@ -75,6 +75,7 @@ function showCards() {
               match.push(cardsClickedOn["0"], cardsClickedOn["1"]);
               cardsClickedOn["0"].classList.add("match");
               cardsClickedOn["1"].classList.add("match");
+              cardsClickedOn = [];
               console.log('we found a match');
             } else {
               setTimeout(function() {
