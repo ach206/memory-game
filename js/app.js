@@ -50,6 +50,10 @@ function shuffle(array) {
 
     return array;
 }
+//timer tracks user's time to complete
+function startTimer() {
+  time.textContent++;
+};
 //starting a new game
 function newGame() {
     document.querySelector('.moves').textContent = 0;
@@ -62,15 +66,13 @@ function newGame() {
     });
     deck.innerHTML = deckHTML;
     time.textContent = 0;
-    setInterval(startTimer, 1000);
 } //closes newGame
 
 newGame();
 
-//timer tracks user's time to complete
-function startTimer() {
-time.textContent++;
-};
+$(".deck").one("click", function() {
+  setInterval(startTimer, 1000);
+});
 //flips 2 cards over and calls a function to see if the cards match
 function showCards() {
     for (i = 0; i < cardNames.length + 1; i++) {
