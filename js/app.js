@@ -26,6 +26,7 @@ let deck = document.querySelector('.deck');
 let cardsClickedOn = [];
 let match = [];
 let deckHTML = " ";
+let time = document.querySelector('.timer');
 // let moves = document.querySelector('.moves').textContent;
 /*
  * Display the cards on the page*/
@@ -60,10 +61,17 @@ function newGame() {
         return deckHTML;
     });
     deck.innerHTML = deckHTML;
+    time.textContent = 0;
+    setInterval(startTimer, 1000);
 } //closes newGame
 
 newGame();
 
+//timer tracks user's time to complete
+function startTimer() {
+time.textContent++;
+};
+//flips 2 cards over and calls a function to see if the cards match
 function showCards() {
     for (i = 0; i < cardNames.length + 1; i++) {
         cards[i].addEventListener('click', function(evt) {
@@ -94,6 +102,7 @@ function showCards() {
             } else {
               evt.target.classList.add("show", "open");
               seeIfCardsMatch();
+              winner();
             } //closes if else
         }); //closes event listenr
     } //closes for loop
@@ -101,14 +110,18 @@ function showCards() {
 
 showCards();
 
-function winner() {
+function winner (){
+  let modal = document.querySelector('.modal');
+  let modalText = document.querySelector('#modalText');
 if (match.length === 16) {
+  modalText.textContent = `Congrats! You found all the matches in  timer seconds and  moves moves. You scored  starCount stars!`;
+  modal.style = "display: block;";
   console.log('you won');
+
 } else {
 
 }//if else
 } //winner fx
-winner();
  /* set up the event listener for a card. If a card is clicked:*/
 /*  - display the card's symbol (put this functionality in another function that you call from this one)*/
 /*  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
