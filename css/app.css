@@ -42,6 +42,7 @@ h1 {
     min-height: 680px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
+    position: relative;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
@@ -81,6 +82,17 @@ h1 {
     font-size: 33px;
 }
 
+/* styles for modal */
+.modal {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    background-color: skyblue;
+    border-radius: 30px;
+    border: 1px solid white;
+}
 /*
  * Styles for the Score Panel
  */
