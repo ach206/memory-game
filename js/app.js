@@ -69,46 +69,53 @@ function newGame() {
 } //closes newGame
 
 newGame();
-
+//when user clicks on the deck the game timer will start
 $(".deck").one("click", function() {
   setInterval(startTimer, 1000);
 });
+
+//function will compare 2 cards to see if they are identical; if they match then the 2 matched cards are pushed into an array
+function seeIfCardsMatch(evt) {
+  let cardOne = cardsClickedOn["0"].innerHTML;
+  let cardTwo = cardsClickedOn["1"].innerHTML;
+  let checkClass = cardsClickedOn["0"].classList;
+  if (cardOne === cardTwo) {
+    match.push(cardsClickedOn["0"], cardsClickedOn["1"]);
+    cardsClickedOn["0"].classList.add("match");
+    cardsClickedOn["1"].classList.add("match");
+    cardsClickedOn = [];
+    document.querySelector('.moves').textContent++;
+  } else {
+    setTimeout(function() {
+      cardsClickedOn[0].classList.remove('show', 'open');
+      cardsClickedOn[1].classList.remove('show', 'open');
+      cardsClickedOn = [];
+    }, 1000);
+    document.querySelector('.moves').textContent++;
+}//close if else
+}; //closes seeIfCardsMatch fx
+
+
 //flips 2 cards over and calls a function to see if the cards match
 function showCards() {
     for (i = 0; i < cardNames.length + 1; i++) {
-        cards[i].addEventListener('click', function(evt) {
-          cardsClickedOn.push(evt.target);
-          function seeIfCardsMatch(evt) {
-            let cardOne = cardsClickedOn["0"].innerHTML;
-            let cardTwo = cardsClickedOn["1"].innerHTML;
-            if (cardOne === cardTwo) {
-              match.push(cardsClickedOn["0"], cardsClickedOn["1"]);
-              cardsClickedOn["0"].classList.add("match");
-              cardsClickedOn["1"].classList.add("match");
-              cardsClickedOn = [];
-              document.querySelector('.moves').textContent++;
-              console.log('we found a match');
-            } else {
-              setTimeout(function() {
-                cardsClickedOn[0].classList.remove('show', 'open');
-                cardsClickedOn[1].classList.remove('show', 'open');
-                cardsClickedOn = [];
-              }, 1000);
-              document.querySelector('.moves').textContent++;
-            }
-              console.log('sorry no matches');
-          }; //closes seeIfCardsMatch fx
-
-            if (cardsClickedOn.length > 2) {
-
-            } else {
-              evt.target.classList.add("show", "open");
-              seeIfCardsMatch();
-              winner();
-            } //closes if else
-        }); //closes event listenr
+      cards[i].addEventListener('click', function(evt) {
+        cardsClickedOn.push(evt.target);
+        if (cardsClickedOn.length <= 2 && !evt.target.classList.contains('match') && !evt.target.classList.contains('show') && !cardsClickedOn["0"].classList.contains('evt.target')) {
+          evt.target.classList.add("show", "open");
+          seeIfCardsMatch();
+          winner();
+       } else {
+         setTimeout(function() {
+           cardsClickedOn[0].classList.remove('show', 'open');
+           cardsClickedOn[1].classList.remove('show', 'open');
+           cardsClickedOn = [];
+         }, 1000);
+ }//closes if else
+      }); //closes event listenr
     } //closes for loop
 } //closes showCards fx
+
 
 showCards();
 
