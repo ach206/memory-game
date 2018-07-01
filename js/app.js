@@ -3,7 +3,6 @@
  */
 // let cards = document.querySelectorAll('.card');
 let cards = document.querySelector('.deck').childNodes;
-let allCards = document.getElementsByClassName('card');
 let cardNames = [
     "gem",
     "barcode",
@@ -56,7 +55,7 @@ function shuffle(array) {
 function startTimer() {
   time.textContent++;
 };
-
+//shuffles the cards and inserts HTML into deck
 function shuffledCards() {
   shuffle(cardNames);
   cardNames.map(function(card) {
@@ -67,19 +66,13 @@ function shuffledCards() {
   });
   deck.innerHTML = deckHTML;
 }
+
 //starting a new game
 function newGame() {
     moves.textContent = 0;
-    shuffledCards();
-  //   shuffle(cardNames);
-  //   cardNames.map(function(card) {
-  //       deckHTML += `<li class="card">
-  // <i class="fas fa-${card}"></i>
-  // </li>`;
-  //       return deckHTML;
-  //   });
-  //   deck.innerHTML = deckHTML;
     time.textContent = 0;
+    shuffledCards();
+    showCards();
 } //closes newGame
 
 newGame();
@@ -87,11 +80,12 @@ newGame();
 restart.addEventListener("click", function(){
   moves.textContent = 0;
   time.textContent = 0;
-  // while (deck.hasChildNodes()) {
-  //     deck.removeChild(deck.firstChild);
-  // };
-  //
-  shuffle(deck.children);
+  while (deck.hasChildNodes()) {
+      deck.removeChild(deck.firstChild);
+  };
+deckHTML = "";
+shuffledCards();
+showCards();
 
 }); //closes restart fx
 
@@ -145,7 +139,7 @@ function showCards() {
 } //closes showCards fx
 
 
-showCards();
+// showCards();
 
 function rating() {
   if (moves.textContent > 25) {
