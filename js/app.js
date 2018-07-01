@@ -123,7 +123,7 @@ function showCards() {
 showCards();
 
 function rating() {
-  if (moves > 25) {
+  if (moves.textContent > 25) {
     stars[1].classList.remove("fa");
     stars[2].classList.remove("fa");
     stars[3].classList.remove("fa");
@@ -134,7 +134,7 @@ function rating() {
     stars[4].classList.add("far");
     text = "1 star";
     return text;
-  } else if (moves > 18 && moves <= 25) {
+  } else if (moves.textContent > 18 && moves.textContent <= 25) {
     stars[2].classList.remove("fa");
     stars[3].classList.remove("fa");
     stars[4].classList.remove("fa");
@@ -143,14 +143,14 @@ function rating() {
     stars[4].classList.add("far");
     text = "2 stars";
     return text;
-  } else if (moves > 12 && moves <= 18) {
+  } else if (moves.textContent > 12 && moves.textContent <= 18) {
     stars[3].classList.remove("fa");
     stars[4].classList.remove("fa");
     stars[3].classList.add("far");
     stars[4].classList.add("far");
     text = "3 stars";
     return text;
-  } else if (moves > 10 && moves <= 12) {
+  } else if (moves.textContent > 10 && moves.textContent <= 12) {
     stars[4].classList.remove("fa");
     stars[4].classList.add("far");
     text = "4 stars";
@@ -167,7 +167,7 @@ function winner (){
   let modalText = document.querySelector('#modalText');
 if (match.length === 16) {
   clearInterval(timer);
-  modalText.textContent = `Congrats! You found all the matches in  ${time.textContent} seconds and  ${moves.textContent} moves. You scored  ${rating(text)} stars!`;
+  modalText.textContent = `Congrats! You found all the matches in  ${time.textContent} seconds and  ${moves.textContent} moves. You scored  ${rating(text)}!`;
   modal.style = "display: block;";
   console.log('you won');
 
