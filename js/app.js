@@ -29,6 +29,7 @@ let deckHTML = " ";
 let time = document.querySelector('.timer');
 let moves = document.querySelector('.moves');
 let stars = document.getElementsByClassName('fa-star');
+let restart = document.querySelector('.restart');
 /*
  * Display the cards on the page*/
 /*   - shuffle the list of cards using the provided "shuffle" method below
@@ -55,21 +56,45 @@ function shuffle(array) {
 function startTimer() {
   time.textContent++;
 };
+
+function shuffledCards() {
+  shuffle(cardNames);
+  cardNames.map(function(card) {
+      deckHTML += `<li class="card">
+<i class="fas fa-${card}"></i>
+</li>`;
+      return deckHTML;
+  });
+  deck.innerHTML = deckHTML;
+}
 //starting a new game
 function newGame() {
     moves.textContent = 0;
-    let shuffledCards = shuffle(cardNames);
-    cardNames.map(function(card) {
-        deckHTML += `<li class="card">
-  <i class="fas fa-${card}"></i>
-  </li>`;
-        return deckHTML;
-    });
-    deck.innerHTML = deckHTML;
+    shuffledCards();
+  //   shuffle(cardNames);
+  //   cardNames.map(function(card) {
+  //       deckHTML += `<li class="card">
+  // <i class="fas fa-${card}"></i>
+  // </li>`;
+  //       return deckHTML;
+  //   });
+  //   deck.innerHTML = deckHTML;
     time.textContent = 0;
 } //closes newGame
 
 newGame();
+
+restart.addEventListener("click", function(){
+  moves.textContent = 0;
+  time.textContent = 0;
+  // while (deck.hasChildNodes()) {
+  //     deck.removeChild(deck.firstChild);
+  // };
+  //
+  shuffle(deck.children);
+
+}); //closes restart fx
+
 //when user clicks on the deck the game timer will start
 let timer = setInterval(startTimer, 1000);
 $(".deck").one("click", function() {
