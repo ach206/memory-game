@@ -128,3 +128,22 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+
+/* ********styles for media 712px & under ****/
+@media only screen and (max-width: 712px) {
+	.score-panel {
+        width: 80%;
+    }
+
+    .deck {
+      width: 95%;
+      min-height: 100vw;
+      padding: 1em;
+    }
+
+    .deck .card {
+        width: 20vw;
+        height: 20vw;
+    }
+}
