@@ -1,20 +1,16 @@
-# Memory Game Project
+# Memory Game
 
-## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+## How to Play
+Click on two different squares to find a matching pair
 
-## Instructions
+## How to Win
+Find all matching pairs! A congratulation message will pop up to notify you of your win and it will provide you stats about how well you did!
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+_Tips_
+The clock starts tracking your time once you click on the game board, so be prepared!
 
 ## Contributing
+At this time pull request will likely not be accepted.
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+Creative Ambition - A. Camille Hall
