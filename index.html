@@ -1,49 +1,50 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Matching Game</title>
-    <meta name="description" content="">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
-    <link rel="stylesheet" href="css/app.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
-<body>
-
-    <div class="container">
-        <header>
-            <h1>Matching Game</h1>
-        </header>
-
-        <section class="score-panel">
-        	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        	</ul>
-
-        	<span class="moves">3</span> Moves
-          <span class="timer">0</span> Seconds
-
-            <div class="restart">
-        		<i class="fa fa-redo"></i>
-        	</div>
-        </section>
-
-        <ul class="deck">
-        </ul>
-        <div class="modal">
-          <div id="modalText"><p>congrats</p></div>
+    <head>
+        <meta charset="utf-8">
+        <title>Matching Game</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+        <link rel="stylesheet" href="css/app.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Matching Game</h1>
+            </header>
+            <section class="score-panel">
+                <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+                <span class="moves">3</span> Moves
+                <span class="timer">0</span> Seconds
+                <div class="restart" onclick="startOver()">
+                    <i class="fa fa-redo"></i>
+                </div>
+            </section>
+            <ul class="deck">
+            </ul>
+            <div class="modal">
+                <div id="modalText">
+                    <p>congrats</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Do you want to play Again?</p>
+                    <button id="noPlay" type="reset" onclick="noPlay()">No</button>
+                    <button id="yesPlay" type="submit" onclick="startOver()">Yes!</button>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <script src="js/app.js" defer></script>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-</body>
+        <script src="js/app.js" defer></script>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    </body>
 </html>
