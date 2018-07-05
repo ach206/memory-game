@@ -16,7 +16,7 @@ click on the game board, so be prepared!
 ## Dependencies
 [jQuery CDN](https://developers.google.com/speed/libraries/)
 
-[Shuffle function from](http://stackoverflow.com/a/2450976)
+Shuffle function from [Stack Overflow](http://stackoverflow.com/a/2450976)
 
 Icons from [Font Awesome](https://fortawesome.github.io/Font-Awesome/icons/)
 
