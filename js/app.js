@@ -27,7 +27,7 @@ let stars = document.getElementsByClassName('fa-star');
 let restart = document.querySelector('.restart');
 let modal = document.querySelector('.modal');
 let modalText = document.querySelector('#modalText');
-
+let timer;
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -47,7 +47,12 @@ function shuffle(array) {
 //function displays time
 function startTimer() {
     time.textContent++;
+    timer = setTimeout(startTimer, 1000);
 };
+
+$(".deck").one("click", function() {
+  timer = setTimeout(startTimer, 1000);
+});
 //shuffles the cards and inserts HTML into deck
 function shuffledCards() {
     shuffle(cardNames);
@@ -73,15 +78,6 @@ function newGame() {
 
 newGame();
 
-
-var timer = function setTime() {
-    setInterval(startTimer, 1000);
-}
-
-$(".deck").one("click", function(timer) {
-    setInterval(startTimer, 1000);
-    //when "let timer=setInveral.." was inside here it worked but unfortunately it made my variable local scope and unable to clearInterval(timer) inside my winner()
-});
 
 //function will compare 2 cards to see if they are identical; if they match then the 2 matched cards are pushed into an array
 function seeIfCardsMatch(evt) {
@@ -170,7 +166,7 @@ function rating() {
 //what happens when the user wins the game
 function winner() {
     if (match.length === 16) {
-        clearInterval(timer);
+        clearTimeout(timer);
         modalText.textContent = `Congrats! You found all the matches in  ${time.textContent} seconds and  ${moves.textContent} moves. You scored  ${rating(text)}!`;
         modal.style = "display: block;";
     } else {
@@ -180,6 +176,11 @@ function winner() {
 
 //resets the game aka start over
 function startOver() {
+  clearTimeout(timer);
+  $(".deck").one("click", function() {
+    console.log('startOver happened on click');
+    timer = setTimeout(startTimer, 1000);
+  });
     modal.style = "display: none;";
     $('.fa-star').addClass('fa');
     moves.textContent = 0;
