@@ -2,13 +2,19 @@
 
 
 ## How to Play
-Click on two different squares to find a matching pair
+Click on two different squares to find a  matching pair
 
 ## How to Win
-Find all matching pairs! A congratulation message will pop up to notify you of your win and it will provide you stats about how well you did!
+Find all matching pairs! A congratulation  message will pop up to notify you of your win  and it will provide you stats about how well  you did!
 
 _Tips_
 The clock starts tracking your time once you click on the game board, so be prepared!
+
+## Dependencies
+[jQuery CDN] (https://developers.google.com/speed/libraries/)
+[Shuffle function from] (http://stackoverflow.com/a/2450976)
+[Font Awesome icons] (https://fortawesome.github.io/Font-Awesome/icons/) :fa-iconname: :fa-thumbs-up:
+Started code provided by [Udacity](www.udacity.com)
 
 ## Contributing
 At this time pull request will likely not be accepted.
