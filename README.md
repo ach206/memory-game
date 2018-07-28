@@ -1,5 +1,6 @@
 # Memory Game
 
+<img src="https://media.giphy.com/media/cYkgU6eq8lrnQhUabI/giphy.gif"/>
 
 ## How to Play
 Click on two different squares to find a  matching pair
