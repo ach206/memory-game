@@ -1,8 +1,10 @@
 # Memory Game
 =============================
 ## Demo
-[Link to a live demo](https://ach206.github.io/memory-game/)
 <img src="https://media.giphy.com/media/cYkgU6eq8lrnQhUabI/giphy.gif"/>
+
+[Link to a live demo](https://ach206.github.io/memory-game/)
+
 
 ## How to Play
 1) Download ZIP file or clone the repo:
