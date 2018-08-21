@@ -1,9 +1,17 @@
 # Memory Game
-
+=============================
+## Demo
+[Link to a live demo](https://ach206.github.io/memory-game/)
 <img src="https://media.giphy.com/media/cYkgU6eq8lrnQhUabI/giphy.gif"/>
 
 ## How to Play
-Click on two different squares to find a  matching pair
+1) Download ZIP file or clone the repo:
+
+    ``https://github.com/ach206/memory-game.git``
+
+2) Navigate to index.html and open file in your internet browser
+
+3) Click on two different squares to find a  matching pair
 
 ## How to Win
 Find all matching pairs! A congratulation
